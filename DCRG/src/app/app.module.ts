@@ -7,6 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { ReportDataService } from './services/report-data.service';
+import { FileUploaderService } from './services/file-uploader.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,9 +19,10 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ReportDataService,FileUploaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
