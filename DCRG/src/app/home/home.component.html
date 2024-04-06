@@ -5,14 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
 </head>
 <body>
+<!-- Header content-->
+<header>
+  <!-- Header content, such as logo, site title, or site navigation -->
+  <h1></h1>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" href="#">CCG</a>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" routerLink="/viewbook">About</a>
+          <!--Need to apply dropdown list for diff gerne-->
+          
+          <a class="nav-link" href="#">Services</a>
+      </div>
+    </div>
+
+
+
+      <!-- Right side elements-->
+      <div class="d-flex align-items-center">
+        <!--Search Bar-->
+        <form class="d-flex input-group w-auto px-4">
+            <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-addon"
+            />
+            <span class="input-group-text border-0" id="search-addon">
+              <i class="fas fa-search">
+                <button class="border-0" type="submit">
+                    <img
+                    src="https://img.icons8.com/ios/344/search--v1.png"
+                    class="rounded-circle"
+                    height="23"
+                    width="23"
+                    alt="Notification"
+                    loading="lazy"
+                    />
+                </button></i>
+            </span>
+        </form>
+
+
+        <!--Login -->
+        <a routerLink="/login" class="nav-link">
+          <button class="btn btn-light">
+              Sing In
+          </button>
+        </a>
+
+      <!--Sign Up Buton-->
+      <a routerLink="/singup">
+          <button class="btn btn-light">
+              Sign Up
+          </button>
+      </a>
+      
+      </div>
+  </nav>
+</header>
+
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <p>Integrating with the Main page</p>
-            <p>Home |-| </p>
+            <h2 class="text-center">Calibration Certificate |-| </h2>
 
             <!-- Template driven angular form -->
             <form (ngSubmit)="onSubmit(formData)" #form="ngForm">
@@ -49,87 +114,100 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="s_1">S1:</label>
-                            <input type="text" id="s_1" name="s_1" class="form-control" [(ngModel)]="formData.s_1" required>
+                          <label for="c_num">Certificate Number:</label>
+                          <input type="text" id="c_num" name="c_num" class="form-control" [(ngModel)]="formData.c_num" required>
                         </div>
-
-                        <div class="form-group">
-                            <label for="s_2">S2:</label>
-                            <input type="text" id="s_2" name="s_2" class="form-control" [(ngModel)]="formData.s_2" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="s_3">S3:</label>
-                            <input type="text" id="s_3" name="s_3" class="form-control" [(ngModel)]="formData.s_3" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="probe">Probe:</label>
-                            <input type="text" id="probe" name="probe" class="form-control" [(ngModel)]="formData.probe" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="temp">Temperature:</label>
-                            <input type="text" id="temp" name="temp" class="form-control" [(ngModel)]="formData.temp" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="humidity">Humidity:</label>
-                            <input type="text" id="humidity" name="humidity" class="form-control" [(ngModel)]="formData.humidity" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="c_num">Certificate Number:</label>
-                            <input type="text" id="c_num" name="c_num" class="form-control" [(ngModel)]="formData.c_num" required>
-                        </div>
-
+  
                         <div class="form-group">
                             <label for="c_on">Calibrated On:</label>
                             <input type="text" id="c_on" name="c_on" class="form-control" [(ngModel)]="formData.c_on" required>
                         </div>
 
-                        <div class="form-group">
-                            <label for="next_date">Next Date:</label>
-                            <input type="date" id="next_date" name="next_date" class="form-control" [(ngModel)]="formData.next_date" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="page">Page:</label>
-                            <input type="number" id="page" name="page" class="form-control" [(ngModel)]="formData.page" required>
-                        </div>
+                        
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
 
+                      <!-- Adding the extra fields-->
+                      <div class="form-group">
+                        <label for="s_1">S1:</label>
+                        <input type="text" id="s_1" name="s_1" class="form-control" [(ngModel)]="formData.s_1" required>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="xlin">X Linear</label>
-                            <input type="file" (change)="onXLinearFileSelected($event)" accept=".pdf" class="form-control">
-                        </div>
+                    <div class="form-group">
+                        <label for="s_2">S2:</label>
+                        <input type="text" id="s_2" name="s_2" class="form-control" [(ngModel)]="formData.s_2" required>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="ylin">Y Linear</label>
-                            <input type="file" (change)="onYLinearFileSelected($event)" accept=".pdf" class="form-control">
-                        </div>
+                    <div class="form-group">
+                        <label for="s_3">S3:</label>
+                        <input type="text" id="s_3" name="s_3" class="form-control" [(ngModel)]="formData.s_3" required>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="zlin">Z Linear</label>
-                            <input type="file" (change)="onZLinearFileSelected($event)" accept=".pdf" class="form-control">
-                        </div>
+                    <div class="form-group">
+                        <label for="probe">Probe:</label>
+                        <input type="text" id="probe" name="probe" class="form-control" [(ngModel)]="formData.probe" required>
+                    </div>
 
-                        <!-- adding uload file button-->
-                        <div class="col-md-12">
-                          <button (click)="uploadFiles()" class="btn btn-secondary">Upload Files</button>
-                      </div>
+                    <div class="form-group">
+                        <label for="temp">Temperature:</label>
+                        <input type="text" id="temp" name="temp" class="form-control" [(ngModel)]="formData.temp" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="humidity">Humidity:</label>
+                        <input type="text" id="humidity" name="humidity" class="form-control" [(ngModel)]="formData.humidity" required>
+                    </div>
+
+                    
+
+                    <div class="form-group">
+                        <label for="next_date">Next Date:</label>
+                        <input type="date" id="next_date" name="next_date" class="form-control" [(ngModel)]="formData.next_date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="page">Page:</label>
+                        <input type="number" id="page" name="page" class="form-control" [(ngModel)]="formData.page" required>
+                    </div>
+
+                    <!-- Done-->
+
+                        
 
                         <!-- Add more file input groups here -->
                     </div>  
+                    <!--CHECK-->
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="xlin">X Linear</label>
+                        <input type="file" (change)="onXLinearFileSelected($event)" accept=".pdf" class="form-control">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="ylin">Y Linear</label>
+                          <input type="file" (change)="onYLinearFileSelected($event)" accept=".pdf" class="form-control">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="zlin">Z Linear</label>
+                          <input type="file" (change)="onZLinearFileSelected($event)" accept=".pdf" class="form-control">
+                      </div>
+
+                      <!-- adding uload file button-->
+                      <div class="form-group">
+                        <button (click)="uploadFiles()" class="btn btn-secondary">Upload Files</button>
+                      </div>
+                    </div>
+                      
+                    <!--CHECK done-->
                 </div>
 
                 <!-- Submit and upload buttons -->
                 <div class="row">
-                    <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
-                    </div>
+                  <div class="col-md-12 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary btn-lg" [disabled]="!form.valid">Submit</button>
+                  </div>
+                
                 </div>
 
             </form>
