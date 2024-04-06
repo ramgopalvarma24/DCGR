@@ -12,7 +12,7 @@ export interface FormData {
   temp: string;
   humidity: string;
   c_num: string;
-  c_on: string;
+  c_on: Date | string;
   next_date: Date | string;
   page: number | string;
 }

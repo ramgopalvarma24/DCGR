@@ -1,122 +1,144 @@
-<p>Integrating with the Main page</p>
-<p>Home |-| </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
 
-<!--Template driven angular form -->
-<form (ngSubmit)="onSubmit(formData)" #form="ngForm">
-  <div class="form-group">
-    <label for="customer">Customer:</label>
-    <input type="text" id="customer" name="customer" class="form-control" [(ngModel)]="formData.customer" required>
-  </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>Integrating with the Main page</p>
+            <p>Home |-| </p>
 
-  <div class="form-group">
-    <label for="address">Address:</label>
-    <input type="text" id="address" name="address" class="form-control" [(ngModel)]="formData.address" required>
-  </div>
+            <!-- Template driven angular form -->
+            <form (ngSubmit)="onSubmit(formData)" #form="ngForm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="customer">Customer:</label>
+                            <input type="text" id="customer" name="customer" class="form-control" [(ngModel)]="formData.customer" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="make">Make:</label>
-    <input type="text" id="make" name="make" class="form-control" [(ngModel)]="formData.make" required>
-  </div>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input type="text" id="address" name="address" class="form-control" [(ngModel)]="formData.address" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="model">Model:</label>
-    <input type="text" id="model" name="model" class="form-control" [(ngModel)]="formData.model" required>
-  </div>
+                        <div class="form-group">
+                            <label for="make">Make:</label>
+                            <input type="text" id="make" name="make" class="form-control" [(ngModel)]="formData.make" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="prob_head">Prob Head:</label>
-    <input type="text" id="prob_head" name="prob_head" class="form-control" [(ngModel)]="formData.prob_head" required>
-  </div>
+                        <div class="form-group">
+                            <label for="model">Model:</label>
+                            <input type="text" id="model" name="model" class="form-control" [(ngModel)]="formData.model" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="size">Size:</label>
-    <input type="text" id="size" name="size" class="form-control" [(ngModel)]="formData.size" required>
-  </div>
+                        <div class="form-group">
+                            <label for="prob_head">Prob Head:</label>
+                            <input type="text" id="prob_head" name="prob_head" class="form-control" [(ngModel)]="formData.prob_head" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="s_1">S1:</label>
-    <input type="text" id="s_1" name="s_1" class="form-control" [(ngModel)]="formData.s_1" required>
-  </div>
+                        <div class="form-group">
+                            <label for="size">Size:</label>
+                            <input type="text" id="size" name="size" class="form-control" [(ngModel)]="formData.size" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="s_2">S2:</label>
-    <input type="text" id="s_2" name="s_2" class="form-control" [(ngModel)]="formData.s_2" required>
-  </div>
+                        <div class="form-group">
+                            <label for="s_1">S1:</label>
+                            <input type="text" id="s_1" name="s_1" class="form-control" [(ngModel)]="formData.s_1" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="s_3">S3:</label>
-    <input type="text" id="s_3" name="s_3" class="form-control" [(ngModel)]="formData.s_3" required>
-  </div>
+                        <div class="form-group">
+                            <label for="s_2">S2:</label>
+                            <input type="text" id="s_2" name="s_2" class="form-control" [(ngModel)]="formData.s_2" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="probe">Probe:</label>
-    <input type="text" id="probe" name="probe" class="form-control" [(ngModel)]="formData.probe" required>
-  </div>
+                        <div class="form-group">
+                            <label for="s_3">S3:</label>
+                            <input type="text" id="s_3" name="s_3" class="form-control" [(ngModel)]="formData.s_3" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="temp">Temperature:</label>
-    <input type="text" id="temp" name="temp" class="form-control" [(ngModel)]="formData.temp" required>
-  </div>
+                        <div class="form-group">
+                            <label for="probe">Probe:</label>
+                            <input type="text" id="probe" name="probe" class="form-control" [(ngModel)]="formData.probe" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="humidity">Humidity:</label>
-    <input type="text" id="humidity" name="humidity" class="form-control" [(ngModel)]="formData.humidity" required>
-  </div>
+                        <div class="form-group">
+                            <label for="temp">Temperature:</label>
+                            <input type="text" id="temp" name="temp" class="form-control" [(ngModel)]="formData.temp" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="c_num">Customer Number:</label>
-    <input type="text" id="c_num" name="c_num" class="form-control" [(ngModel)]="formData.c_num" required>
-  </div>
+                        <div class="form-group">
+                            <label for="humidity">Humidity:</label>
+                            <input type="text" id="humidity" name="humidity" class="form-control" [(ngModel)]="formData.humidity" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="c_on">Customer On:</label>
-    <input type="text" id="c_on" name="c_on" class="form-control" [(ngModel)]="formData.c_on" required>
-  </div>
+                        <div class="form-group">
+                            <label for="c_num">Certificate Number:</label>
+                            <input type="text" id="c_num" name="c_num" class="form-control" [(ngModel)]="formData.c_num" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="next_date">Next Date:</label>
-    <input type="date" id="next_date" name="next_date" class="form-control" [(ngModel)]="formData.next_date" required>
-  </div>
+                        <div class="form-group">
+                            <label for="c_on">Calibrated On:</label>
+                            <input type="text" id="c_on" name="c_on" class="form-control" [(ngModel)]="formData.c_on" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="page">Page:</label>
-    <input type="number" id="page" name="page" class="form-control" [(ngModel)]="formData.page" required>
-  </div>
-  
-  <!--adding file (pdf format)-->
-  <div class="form-group">
-    <label for="xlin">X Linear</label>
-    <input type="file" (change)="onXLinearFileSelected($event)" accept=".pdf">
-  </div>
+                        <div class="form-group">
+                            <label for="next_date">Next Date:</label>
+                            <input type="date" id="next_date" name="next_date" class="form-control" [(ngModel)]="formData.next_date" required>
+                        </div>
 
-  <div class="form-group">
-    <label for="ylin">Y Linear</label>
-    <input type="file" (change)="onYLinearFileSelected($event)" accept=".pdf">
-  </div>
-
-  <div class="form-group">
-    <label for="zlin">Z Linear</label>
-    <input type="file" (change)="onZLinearFileSelected($event)" accept=".pdf">
-  </div>
-
-  <button (click)="uploadFiles()">Upload Files</button>
-
- 
-
-  <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
-</form>
-
-<!-- Uploading pdf files -->
+                        <div class="form-group">
+                            <label for="page">Page:</label>
+                            <input type="number" id="page" name="page" class="form-control" [(ngModel)]="formData.page" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
 
 
+                        <div class="form-group">
+                            <label for="xlin">X Linear</label>
+                            <input type="file" (change)="onXLinearFileSelected($event)" accept=".pdf" class="form-control">
+                        </div>
 
+                        <div class="form-group">
+                            <label for="ylin">Y Linear</label>
+                            <input type="file" (change)="onYLinearFileSelected($event)" accept=".pdf" class="form-control">
+                        </div>
 
+                        <div class="form-group">
+                            <label for="zlin">Z Linear</label>
+                            <input type="file" (change)="onZLinearFileSelected($event)" accept=".pdf" class="form-control">
+                        </div>
 
+                        <!-- adding uload file button-->
+                        <div class="col-md-12">
+                          <button (click)="uploadFiles()" class="btn btn-secondary">Upload Files</button>
+                      </div>
 
+                        <!-- Add more file input groups here -->
+                    </div>  
+                </div>
 
+                <!-- Submit and upload buttons -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+                    </div>
+                </div>
 
-<!-- form end-->
+            </form>
+        </div>
+    </div>
+</div>
 
-
-
-<!-- app.component.html -->
+<!-- Include Angular and Bootstrap JavaScript libraries if needed -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
