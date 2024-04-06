@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
     sp_ac: '',
     prob_err: ''
   };
+cert_response: any;
 
 
   //Initiating the service by calling through constructor
@@ -43,41 +44,41 @@ export class HomeComponent implements OnInit {
   }
 
   //declaration of file to store the pdf files
-  xLinearFile: File | undefined;
-  yLinearFile: File | undefined;
-  zLinearFile: File | undefined;
+  x_linear: File | undefined;
+  y_linear: File | undefined;
+  z_linear: File | undefined;
 
 
 
   //method triggering
   onXLinearFileSelected(event: any) {
-    this.xLinearFile = event.target.files[0];
+    this.x_linear = event.target.files[0];
   }
 
   onYLinearFileSelected(event: any) {
-    this.yLinearFile = event.target.files[0];
+    this.y_linear = event.target.files[0];
   }
 
   onZLinearFileSelected(event: any) {
-    this.zLinearFile = event.target.files[0];
+    this.z_linear = event.target.files[0];
   }
   
   //Defining form method onsubmit
   uploadFiles() {
-    if (!this.xLinearFile || !this.yLinearFile || !this.zLinearFile) {
+    if (!this.x_linear || !this.y_linear || !this.z_linear) {
       console.log('Please select all files.');
       return;
     }
 
     //const fileFormData = new FormData();
     const fileFormData = new FormData();
-    fileFormData.append('xLinearFile', this.xLinearFile);
-    fileFormData.append('yLinearFile', this.yLinearFile);
-    fileFormData.append('zLinearFile', this.zLinearFile);
+    fileFormData.append('x_linear', this.x_linear);
+    fileFormData.append('y_linear', this.y_linear);
+    fileFormData.append('z_linear', this.z_linear);
 
     this.fileUploadeservice.uploadFiles(fileFormData).subscribe(
       file_response => {
-        debugger
+        
         console.log('Files Uploaded successfully- > ', file_response);
       },
       error =>{
@@ -111,8 +112,11 @@ export class HomeComponent implements OnInit {
   onSubmit(formData:FormData){
     console.log('form data: ',formData);
     this.reportDataSrvice.PassReportData(formData).subscribe(
-      response => {
-        console.log('Submit successfull: ', response)
+      cert_response => {
+        this.cert_response = cert_response.msg;
+        console.log("Request sent: ",cert_response);
+        console.log("check message: ",cert_response.msg);
+        console.log("file Path: ",cert_response.doc_file)
       },
       error =>{
         console.log('Error: ', error)
