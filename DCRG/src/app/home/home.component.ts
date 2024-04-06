@@ -28,7 +28,10 @@ export class HomeComponent implements OnInit {
     c_num: '',
     c_on: '',
     next_date: '',
-    page: ''
+    page: '',
+    id_cd: '',
+    sp_ac: '',
+    prob_err: ''
   };
 
 
@@ -73,11 +76,12 @@ export class HomeComponent implements OnInit {
     fileFormData.append('zLinearFile', this.zLinearFile);
 
     this.fileUploadeservice.uploadFiles(fileFormData).subscribe(
-      response => {
-        console.log('Files Uploaded successfully', response);
+      file_response => {
+        debugger
+        console.log('Files Uploaded successfully- > ', file_response);
       },
       error =>{
-        console.log('Error uploading files:', error);
+        console.log('Error uploading files: _>', error);
       }
     );
     
@@ -108,7 +112,7 @@ export class HomeComponent implements OnInit {
     console.log('form data: ',formData);
     this.reportDataSrvice.PassReportData(formData).subscribe(
       response => {
-        console.log(response)
+        console.log('Submit successfull: ', response)
       },
       error =>{
         console.log('Error: ', error)

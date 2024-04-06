@@ -88,20 +88,24 @@
                             <input type="text" id="customer" name="customer" class="form-control" [(ngModel)]="formData.customer" required>
                         </div>
 
-                        <div class="form-group">
-                            <label for="address">Address:</label>
-                            <input type="text" id="address" name="address" class="form-control" [(ngModel)]="formData.address" required>
-                        </div>
+                        <!--machine details-->
+                        <h4>Machie Details </h4>
 
                         <div class="form-group">
-                            <label for="make">Make:</label>
-                            <input type="text" id="make" name="make" class="form-control" [(ngModel)]="formData.make" required>
-                        </div>
+                          <label for="make">Make:</label>
+                          <input type="text" id="make" name="make" class="form-control" [(ngModel)]="formData.make" required>
+                      </div>
 
-                        <div class="form-group">
-                            <label for="model">Model:</label>
-                            <input type="text" id="model" name="model" class="form-control" [(ngModel)]="formData.model" required>
-                        </div>
+                        
+                        
+                      <div class="form-group">
+                        <label for="s_1">Serial Number:</label>
+                        <input type="text" id="s_1" name="s_1" class="form-control" [(ngModel)]="formData.s_1" required>
+                      </div>
+
+                        
+
+                        
 
                         <div class="form-group">
                             <label for="prob_head">Prob Head:</label>
@@ -109,19 +113,33 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="size">Size:</label>
-                            <input type="text" id="size" name="size" class="form-control" [(ngModel)]="formData.size" required>
+                            <label for="probe">Probe:</label>
+                            <input type="text" id="probe" name="probe" class="form-control" [(ngModel)]="formData.probe" required>
                         </div>
 
-                        <div class="form-group">
-                          <label for="c_num">Certificate Number:</label>
-                          <input type="text" id="c_num" name="c_num" class="form-control" [(ngModel)]="formData.c_num" required>
-                        </div>
-  
-                        <div class="form-group">
-                            <label for="c_on">Calibrated On:</label>
-                            <input type="text" id="c_on" name="c_on" class="form-control" [(ngModel)]="formData.c_on" required>
-                        </div>
+                        
+                      <div class="form-group">
+                        <label for="temp">Temperature:</label>
+                        <input type="text" id="temp" name="temp" class="form-control" [(ngModel)]="formData.temp" required>
+                      </div>
+
+
+                      
+                      <div class="form-group">
+                        <label for="next_date">Next Date:</label>
+                        <input type="date" id="next_date" name="next_date" class="form-control" [(ngModel)]="formData.next_date" required>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="id_cd">Identification Code:</label>
+                        <input type="text" id="id_cd" name="id_cd" class="form-control" [(ngModel)]="formData.id_cd" required>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="sp_ac">Specified Accuracy:</label>
+                        <input type="text" id="sp_ac" name="sp_ac" class="form-control" [(ngModel)]="formData.sp_ac" required>
+                      </div>
+
 
                         
                     </div>
@@ -129,29 +147,35 @@
 
                       <!-- Adding the extra fields-->
                       <div class="form-group">
-                        <label for="s_1">S1:</label>
-                        <input type="text" id="s_1" name="s_1" class="form-control" [(ngModel)]="formData.s_1" required>
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" class="form-control" [(ngModel)]="formData.address" required>
+                      </div>
+
+                     <br>
+                     
+                     <div class="form-group">
+                      <label for="model">Model:</label>
+                      <input type="text" id="model" name="model" class="form-control" [(ngModel)]="formData.model" required>
+                      </div>
+
+
+                     <div class="form-group">
+                      <label for="size">Size:</label>
+                      <input type="text" id="size" name="size" class="form-control" [(ngModel)]="formData.size" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="s_2">S2:</label>
+                        <label for="s_2">Serial Number:</label>
                         <input type="text" id="s_2" name="s_2" class="form-control" [(ngModel)]="formData.s_2" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="s_3">S3:</label>
+                        <label for="s_3">Serial Number:</label>
                         <input type="text" id="s_3" name="s_3" class="form-control" [(ngModel)]="formData.s_3" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="probe">Probe:</label>
-                        <input type="text" id="probe" name="probe" class="form-control" [(ngModel)]="formData.probe" required>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="temp">Temperature:</label>
-                        <input type="text" id="temp" name="temp" class="form-control" [(ngModel)]="formData.temp" required>
-                    </div>
+
 
                     <div class="form-group">
                         <label for="humidity">Humidity:</label>
@@ -161,14 +185,18 @@
                     
 
                     <div class="form-group">
-                        <label for="next_date">Next Date:</label>
-                        <input type="date" id="next_date" name="next_date" class="form-control" [(ngModel)]="formData.next_date" required>
-                    </div>
-
-                    <div class="form-group">
                         <label for="page">Page:</label>
                         <input type="number" id="page" name="page" class="form-control" [(ngModel)]="formData.page" required>
                     </div>
+
+                    
+                    <div class="form-group">
+                      <label for="prob_err">Probing Error:</label>
+                      <input type="text" id="prob_err" name="prob_err" class="form-control" [(ngModel)]="formData.prob_err" required>
+                  </div>
+
+
+                    
 
                     <!-- Done-->
 
@@ -178,6 +206,19 @@
                     </div>  
                     <!--CHECK-->
                     <div class="col-md-3">
+
+                      
+                      <div class="form-group">
+                        <label for="c_num">Certificate Number:</label>
+                        <input type="text" id="c_num" name="c_num" class="form-control" [(ngModel)]="formData.c_num" required>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="c_on">Calibrated On:</label>
+                          <input type="date" id="c_on" name="c_on" class="form-control" [(ngModel)]="formData.c_on" required>
+                      </div>
+
+
                       <div class="form-group">
                         <label for="xlin">X Linear</label>
                         <input type="file" (change)="onXLinearFileSelected($event)" accept=".pdf" class="form-control">
@@ -193,6 +234,9 @@
                           <input type="file" (change)="onZLinearFileSelected($event)" accept=".pdf" class="form-control">
                       </div>
 
+                      
+
+
                       <!-- adding uload file button-->
                       <div class="form-group">
                         <button (click)="uploadFiles()" class="btn btn-secondary">Upload Files</button>
@@ -205,7 +249,7 @@
                 <!-- Submit and upload buttons -->
                 <div class="row">
                   <div class="col-md-12 d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary btn-lg" [disabled]="!form.valid">Submit</button>
+                    <button type="submit" class="btn btn-primary btn-lg" [disabled]="!form.valid">Generate Certificate</button>
                   </div>
                 
                 </div>

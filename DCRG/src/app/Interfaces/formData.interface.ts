@@ -15,4 +15,7 @@ export interface FormData {
   c_on: Date | string;
   next_date: Date | string;
   page: number | string;
+  id_cd: string,
+    sp_ac: string,
+    prob_err: string
 }
