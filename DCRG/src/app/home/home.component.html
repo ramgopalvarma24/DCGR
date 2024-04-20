@@ -14,7 +14,7 @@
   <h1></h1>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-    <a class="navbar-brand" href="#">CCG</a>
+    <a class="navbar-brand" href="#">UVG</a>
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
@@ -56,11 +56,13 @@
 
 
         <!--Login -->
+        <!--
         <a routerLink="/login" class="nav-link">
           <button class="btn btn-light">
               Sing In
           </button>
         </a>
+        -->
 
       <!--Sign Up Buton-->
       <a routerLink="/singup">
@@ -238,9 +240,10 @@
 
 
                       <!-- adding uload file button-->
-                      <div class="form-group">
-                        <button (click)="uploadFiles()" class="btn btn-secondary">Upload Files</button>
-                        <p> Message: {{cert_response.msg}}</p>
+                      <div >
+                        <!--button (click)="uploadFiles()" class="btn btn-secondary">Upload Files</button-->
+                        <button type="button" class="btn btn-secondary btn-lg" (click)="uploadFiles()">Upload Files</button>
+                        <p [class.text-success]="isUploadSuccess" [class.text-danger]="!isUploadSuccess"> {{UploadresponseMessage}}</p>
                       </div>
                     </div>
                       
@@ -248,13 +251,16 @@
                 </div>
                 <div>
                   <!--Added the message to display the api Output-->
-                    <p> Message: {{cert_response.msg}}</p>
+                    <p [class.text-success]="IsCertSuccess" [class.text-danger]="!IsCertSuccess" > {{cert_response}}</p>
+
+                    <a *ngIf="IsCertSuccess" [href]="cert_response" target="_blank" rel="noopener noreferrer">"Click Here to Download Certificate: " {{ cert_link }}</a>
                 </div>
 
                 <!-- Submit and upload buttons -->
                 <div class="row">
                   <div class="col-md-12 d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary btn-lg" [disabled]="!form.valid">Generate Certificate</button>
+                    <button type="submit" class="btn btn-primary btn-lg ml-3" [disabled]="!form.valid">Generate Certificate</button>
+                    
                   </div>
                 
                 </div>

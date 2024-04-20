@@ -33,7 +33,12 @@ export class HomeComponent implements OnInit {
     sp_ac: '',
     prob_err: ''
   };
-cert_response: any;
+
+  cert_response: any;
+  IsCertSuccess: boolean | undefined;
+  UploadresponseMessage: string | undefined ;
+  isUploadSuccess: boolean | undefined;
+  cert_link: any;
 
 
   //Initiating the service by calling through constructor
@@ -79,10 +84,15 @@ cert_response: any;
     this.fileUploadeservice.uploadFiles(fileFormData).subscribe(
       file_response => {
         
-        console.log('Files Uploaded successfully- > ', file_response);
+        console.log('Files Uploaded successfully- > ', file_response.msg);
+        this.UploadresponseMessage =  file_response.msg;
+        this.isUploadSuccess = true;
       },
       error =>{
+        this.isUploadSuccess = false;
         console.log('Error uploading files: _>', error);
+        this.isUploadSuccess = false;
+        this.UploadresponseMessage = "An error occurred while Uploading files";
       }
     );
     
@@ -112,14 +122,19 @@ cert_response: any;
   onSubmit(formData:FormData){
     console.log('form data: ',formData);
     this.reportDataSrvice.PassReportData(formData).subscribe(
-      cert_response => {
-        this.cert_response = cert_response.msg;
-        console.log("Request sent: ",cert_response);
-        console.log("check message: ",cert_response.msg);
-        console.log("file Path: ",cert_response.doc_file)
+      response => {
+        this.cert_response = response.msg;
+        console.log("Request sent: ",this.cert_response);
+        //console.log("check message: ",cert_response.msg);
+        console.log("file Path: ",response.doc_file);
+        this.cert_link = response.doc_file
+        this.IsCertSuccess = true;
       },
       error =>{
-        console.log('Error: ', error)
+        console.log('Error: ', error);
+        this.IsCertSuccess = false;
+        this.cert_response = 'An error occurred while Generating Certificate';
+
       }
     )
   }
